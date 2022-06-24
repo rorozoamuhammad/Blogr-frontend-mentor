@@ -912,4 +912,9 @@ main footer .center :where(.company p:nth-child(5), .connect p:nth-child(2)) {
     main footer .center div {
         margin-top: 4em;
     }
+
+    main footer .center div p {
+        margin: auto;
+        margin-bottom: .5em;
+    }
 }
