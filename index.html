@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Blogr]</title>
+
+  <!-- link css -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <main>
+
+    <header>
+
+      <nav>
+
+        <div class="logo">
+          <img src="images/logo.svg" alt="logo">
+          <div class="dropdown">
+            <div class="downPro" data-click="no" id="dropPro">
+              <p class="pro">Product</p>
+              <img src="images/icon-arrow-light.svg" alt="icon-arrow-light">
+              <div class="down" data-down="up" id="downPro">
+                <p>Overview</p>
+                <p>Pricing</p>
+                <p>Marketplace</p>
+                <p>Features</p>
+                <p>Integrations</p>
+              </div>
+            </div>
+            <div class="downComp" data-click="no" id="dropComp">
+              <p class="comp">Company</p>
+              <img src="images/icon-arrow-light.svg" alt="icon-arrow-light">
+              <div class="down" data-down="up" id="downComp">
+                <p>About</p>
+                <p>Team</p>
+                <p>Blog</p>
+                <p>Careers</p>
+              </div>
+            </div>
+            <div class="downConn" data-click="no" id="dropCon">
+              <p class="cont">Connect</p>
+              <img src="images/icon-arrow-light.svg" alt="icon-arrow-light">
+              <div class="down" data-down="up" id="downCont">
+                <p>Contact</p>
+                <p>Newsletter</p>
+                <p>LinkedIn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="login">
+          <p>Login</p>
+          <button type="button">Sign Up</button>
+        </div>
+
+        <div class="menuMob" id="burger" data-burger="yes">
+          <img src="images/icon-hamburger.svg" alt="icon-hamburger">
+          <img src="images/icon-close.svg" alt="icon-close">
+        </div>
+
+        <div class="menu" id="menu" data-display="none">
+          <div class="dropdown">
+            <div class="downPro" data-click="no" id="downProMob">
+              <p class="p">Product</p>
+              <img src="images/icon-arrow-dark.svg" alt="icon-arrow-dark">
+              <div class="downMob" data-down="up" id="downProm">
+                <p>Overview</p>
+                <p>Pricing</p>
+                <p>Marketplace</p>
+                <p>Features</p>
+                <p>Integrations</p>
+              </div>
+            </div>
+            <div class="downComp" data-click="no" id="downCompMob">
+              <p class="c">Company</p>
+              <img src="images/icon-arrow-dark.svg" alt="icon-arrow-dark">
+              <div class="downMob" data-down="up" id="downCompm">
+                <p>About</p>
+                <p>Team</p>
+                <p>Blog</p>
+                <p>Careers</p>
+              </div>
+            </div>
+            <div class="downConn" data-click="no" id="downContMob">
+              <p class="C">Connect</p>
+              <img src="images/icon-arrow-dark.svg" alt="icon-arrow-dark">
+              <div class="downMob" data-down="up" id="downContm">
+                <p>Contact</p>
+                <p>Newsletter</p>
+                <p>LinkedIn</p>
+              </div>
+            </div>
+          </div>
+          <div class="login">
+            <p>Login</p>
+            <button type="button">Sign Up</button>
+          </div>
+        </div>
+
+      </nav>
+
+      <section class="utama">
+        <div class="teks">
+          <h1>A modern publishing platform</h1>
+          <p>Grow your audience and build your online brand</p>
+        </div>
+        <div class="btn">
+          <button type="button">Start for Free</button>
+          <button type="button">Learn More</button>
+        </div>
+      </section>
+
+    </header>
+
+    <section class="feature">
+      <h1>Designed for the future</h1>
+      <img src="images/illustration-editor-mobile.svg" alt="illustration-editor-mobile">
+      <article>
+        <h1>Introducing an extensible editor</h1>
+        <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
+        <h1>Robust content management</h1>
+        <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+      </article>
+    </section>
+
+    <section class="state">
+      <img src="images/illustration-phones.svg" alt="illustration-phones">
+      <article>
+        <h1>State of the Art Infrastructure</h1>
+        <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+      </article>
+    </section>
+
+    <section class="tool">
+      <div class="gambar">
+        <img src="images/illustration-laptop-desktop.svg" alt="illustration-laptop-desktop">
+        <img src="images/illustration-laptop-mobile.svg" alt="illustration-laptop-mobile">
+      </div>
+      <article>
+        <h1>Free, open, simple</h1>
+        <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+        <h1>Powerful tooling</h1>
+        <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
+      </article>
+    </section>
+
+    <footer>
+      <div class="center">
+        <div class="logo">
+          <img src="images/logo.svg" alt="logo">
+        </div>
+        <div class="product">
+          <p>Product</p>
+          <p>Overview</p>
+          <p>Pricing</p>
+          <p>Marketplace</p>
+          <p>Features</p>
+          <p>Integrations</p>
+        </div>
+        <div class="company">
+          <p>Company</p>
+          <p>About</p>
+          <p>Team</p>
+          <p>Blog</p>
+          <p>Careers</p>
+        </div>
+        <div class="connect">
+          <p>Connect</p>
+          <p>Contact</p>
+          <p>Newsletter</p>
+          <p>LinkedIn</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

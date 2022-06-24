@@ -1,0 +1,915 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cta-text: hsl(356, 100%, 66%);
+    --cta-hover: hsl(355, 100%, 74%);
+    --heading: hsl(208, 49%, 24%);
+    --text: hsl(0, 0%, 100%);
+    --footer-text: hsl(240, 3%, 79%);
+    --body-copy: hsl(207, 13%, 34%);
+    --footer-background: hsl(240, 10%, 16%);
+    --gradient-mob-first: hsl(13, 100%, 72%);
+    --gradient-mob-second: hsl(353, 100%, 62%);
+    --background-gradient-first: hsl(237, 17%, 21%);
+    --background-gradient-second: hsl(237, 23%, 32%);
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+main header {
+    width: 100vw;
+    height: 80vh;
+    background-image: url("../images/bg-pattern-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-left-radius: 10%;
+}
+
+main header::before {
+    content: "";
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(90deg, var(--gradient-mob-first), var(--gradient-mob-second));
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -99999;
+    border-bottom-left-radius: 10%;
+}
+
+/* navbar */
+
+main header nav {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main header nav .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+}
+
+main header nav .logo .dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    margin-left: 10%;
+}
+
+main header nav .logo .dropdown div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--footer-text);
+    font-weight: 400;
+}
+
+main header nav .logo .dropdown div :where(.pro, .comp, .cont) {
+    transition: 300ms;
+    border-bottom: 2px solid transparent;
+}
+
+main header nav .logo .dropdown div :is(.pro:hover, .comp:hover, .cont:hover) {
+    cursor: pointer;
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
+}
+
+main header nav .logo .dropdown :is(.downPro[data-click="yes"] .pro, .downComp[data-click="yes"] .comp, .downConn[data-click="yes"] .cont) {
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
+}
+
+main header nav .logo .dropdown div[data-click="yes"] img {
+    transform: rotate(180deg);
+}
+
+main header nav .logo .dropdown .downPro .down {
+    position: absolute;
+    top: 15%;
+    left: 14vw;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--text);
+    color: var(--body-copy);
+    padding: 1em;
+    border-radius: 10px;
+    height: 20%;
+    width: 10%;
+    color: var(--body-copy);
+    font-weight: 300;
+}
+
+main header nav .logo .dropdown .downComp .down {
+    position: absolute;
+    top: 15%;
+    left: 28vw;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--text);
+    color: var(--body-copy);
+    padding: 1em;
+    border-radius: 10px;
+    height: 20%;
+    width: 6%;
+    color: var(--body-copy);
+    font-weight: 300;
+}
+
+main header nav .logo .dropdown .downConn .down {
+    position: absolute;
+    top: 15%;
+    left: 39vw;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--text);
+    color: var(--body-copy);
+    padding: 1em;
+    border-radius: 10px;
+    height: 20%;
+    width: 8%;
+    color: var(--body-copy);
+    font-weight: 300;
+}
+
+main header nav .logo .dropdown div .down p:hover {
+    color: var(--heading);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main header nav .logo .dropdown :is(.downPro .down[data-down="down"], .downComp .down[data-down="down"], .downConn .down[data-down="down"]) {
+    display: flex;
+}
+
+main header nav .logo .dropdown div img {
+    margin: .5em;
+}
+
+main header nav .login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30vw;
+    padding: 0 10%;
+}
+
+main header nav .login p {
+    margin-right: 1em;
+    color: var(--text);
+    font-weight: 300;
+    cursor: pointer;
+}
+
+main header nav .login button {
+    padding: .8em 2em;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--text);
+    color: var(--cta-text);
+    font-weight: 600;
+    transition: 500ms;
+}
+
+main header nav .login button:hover {
+    background-color: var(--cta-hover);
+    color: var(--text);
+    cursor: pointer;
+}
+
+main header nav .menuMob {
+    display: none;
+}
+
+main header nav .menu {
+    display: none;
+}
+
+/* header */
+
+main header .utama {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main header .utama .teks {
+    height: 30%;
+    line-height: 4em;
+}
+
+main header .utama .teks h1 {
+    font-size: 4em;
+    color: var(--text);
+    font-weight: 400;
+}
+
+main header .utama .teks p {
+    color: var(--footer-text);
+    font-size: 1.4em;
+}
+
+main header .utama .btn {
+    height: 30%;
+    line-height: 5em;
+}
+
+main header .utama .btn button {
+    padding: 1em 1.5em;
+    margin: 0 1em;
+    font-size: .8em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+main header .utama .btn button:nth-child(1) {
+    background-color: var(--text);
+    color: var(--cta-text);
+    transition: 500ms;
+}
+
+main header .utama .btn button:nth-child(1):hover {
+    background-color: var(--cta-hover);
+    color: var(--text);
+    cursor: pointer;
+}
+
+main header .utama .btn button:nth-child(2) {
+    background-color: var(--cta-text);
+    color: var(--text);
+    border: 1px solid var(--text);
+    transition: 500ms;
+}
+
+main header .utama .btn button:nth-child(2):hover {
+    background-color: var(--text);
+    color: var(--cta-text);
+    cursor: pointer;
+}
+
+/* future */
+
+main .feature {
+    margin-top: 10vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../images/illustration-editor-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 50vw 95vh;
+    background-position: 64vw;
+}
+
+main .feature h1 {
+    margin-top: 1.5em;
+    font-size: 2.5em;
+    font-weight: 400;
+    color: var(--heading);
+}
+
+main .feature article {
+    width: 40vw;
+    margin: 7vh;
+    margin-right: 40vw;
+}
+
+main .feature article h1 {
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+main .feature article p {
+    font-size: 1.03em;
+    font-weight: 300;
+    color: var(--body-copy);
+}
+
+main .feature article p:nth-child(4) {
+    font-size: 1.09em;
+}
+
+main .feature img {
+    display: none;
+}
+
+/* state art */
+
+main .state {
+    width: 100vw;
+    height: 48vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/bg-pattern-circles.svg");
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-repeat: no-repeat;
+    background-size: 55vw;
+    background-position: -11vw -50vh;
+    border-bottom-left-radius: 70px;
+    border-top-right-radius: 100px;
+}
+
+main .state::after {
+    content: "";
+    width: 100vmax;
+    height: 48vh;
+    background: linear-gradient(to right, var(--background-gradient-first), var(--background-gradient-second));
+    position: absolute;
+    z-index: -99999999;
+    border-bottom-left-radius: 70px;
+    border-top-right-radius: 100px;
+}
+
+main .state img {
+    width: 30vw;
+    height: 70vh;
+    margin: auto;
+    margin-top: -8vh;
+}
+
+main .state article {
+    width: 35vw;
+    margin: auto;
+    margin-top: 16vh;
+    margin-right: 18vw;
+}
+
+main .state article h1 {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 2em;
+}
+
+main .state article p {
+    color: var(--footer-text);
+    font-weight: 300;
+    margin-top: 1em;
+    font-size: .9em;
+}
+
+/* tool */
+
+main .tool {
+    width: 100vw;
+    display: grid;
+    margin-top: 10vh;
+    padding-top: 10vh;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+main .tool .gambar {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .tool .gambar img:nth-child(1) {
+    width: 70vw;
+    margin-left: -28vw;
+}
+
+main .tool .gambar img:nth-child(2) {
+    display: none;
+}
+
+main .tool article {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+main .tool article h1 {
+    color: var(--heading);
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+main .tool article p {
+    color: var(--body-copy);
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+/* footer */
+main footer {
+    margin-top: 10vh;
+    padding: 2em 0;
+    width: 100vw;
+    background-color: var(--footer-background);
+    border-top-right-radius: 90px;
+}
+
+main footer .center {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: var(--footer-text);
+    font-weight: 300;
+}
+
+main footer .center div p {
+    margin-bottom: .5em;
+    transition: 500ms;
+    border-bottom: 1px solid transparent;
+}
+
+main footer .center div p:nth-child(1) {
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: var(--text);
+}
+
+main footer .center div p:hover {
+    border-bottom: 1px solid var(--text);
+    cursor: pointer;
+}
+
+main footer .center div p:nth-child(1):hover {
+    border-bottom: 1px solid transparent;
+    cursor: default;
+}
+
+main footer .center .product p:nth-child(2) {
+    width: 4.4em;
+}
+
+main footer .center .product p:nth-child(3) {
+    width: 3em;
+}
+
+main footer .center .product p:nth-child(4) {
+    width: 5.7em;
+}
+
+main footer .center :where(.product p:nth-child(5), .connect p:last-child) {
+    width: 4em;
+}
+
+main footer .center .company p:nth-child(2) {
+    width: 2.9em;
+}
+
+main footer .center .company p:nth-child(3) {
+    width: 2.5em;
+}
+
+main footer .center .company p:nth-child(4) {
+    width: 2em;
+}
+
+main footer .center :where(.company p:nth-child(5), .connect p:nth-child(2)) {
+    width: 3.5em;
+}
+
+@media screen and (min-width: 1440px) {
+    main .feature {
+        background-size: 50vw 100vh;
+    }
+
+    main .feature article {
+        margin-top: 0;
+    }
+
+    main .state {
+        height: 65vh;
+        background-size: 60vw;
+        background-position: -11vw -80vh;
+    }
+
+    main .state::after {
+        height: 65vh;
+    }
+
+    main .state img {
+        height: 91vh;
+        width: 35vw;
+    }
+
+    main .state article {
+        margin-top: 23vh;
+    }
+
+    main .state article p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main header nav .logo .dropdown .downConn .down {
+        left: 45vw;
+        width: 10%;
+        justify-content: space-around;
+        height: 15%;
+        top: 13%;
+    }
+
+    main header nav .logo .dropdown .downComp .down {
+        height: 15%;
+        justify-content: space-around;
+        left: 33.5vw;
+        top: 13%;
+    }
+
+    main header nav .logo .dropdown .downPro .down {
+        height: 15%;
+        justify-content: space-around;
+        left: 16vw;
+        top: 13%;
+        width: 12%;
+    }
+
+    main .feature {
+        margin-top: 0;
+        background-size: 65vw 50vh;
+        background-position: 55vw 15vh;
+        height: 70vh;
+    }
+
+    main .feature article {
+        margin-right: 55vw;
+    }
+
+    main .state {
+        height: 30vh;
+        background-image: url("../images/bg-pattern-circles.svg");
+    }
+
+    main .state::after {
+        height: 30vh;
+    }
+
+    main .state img {
+        height: 47vh;
+        width: 55vw;
+        margin-left: 10vw;
+    }
+
+    main .state article {
+        width: 40vw;
+        margin: auto;
+        margin-left: 5vw;
+        margin-right: 10vw;
+        margin-top: 8vh;
+    }
+
+    main .state article h1 {
+        font-size: 1.5em;
+    }
+
+    main .state article p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main header {
+        background-image: url("../images/bg-pattern-intro-mobile.svg");
+        border-bottom-left-radius: 20%;
+    }
+
+    main header::before {
+        border-bottom-left-radius: 20%;
+    }
+
+    main nav .logo {
+        width: 50vw;
+    }
+
+    main header nav .login,
+    main header nav .logo .dropdown {
+        display: none;
+    }
+
+    main header nav .menuMob {
+        display: flex;
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main header nav .menuMob[data-burger="yes"] img:nth-child(2) {
+        display: none;
+    }
+
+    main header nav .menuMob[data-burger="yes"] img:nth-child(1) {
+        display: block;
+    }
+
+    main header nav .menuMob[data-burger="no"] img:nth-child(2) {
+        display: block;
+    }
+
+    main header nav .menuMob[data-burger="no"] img:nth-child(1) {
+        display: none;
+    }
+
+    main header nav .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 15vh;
+        right: 16vw;
+        left: 13vw;
+        height: 80vh;
+        margin: auto;
+        background-color: var(--text);
+    }
+
+    main header nav .menu[data-display="none"] {
+        display: none;
+    }
+
+    main header nav .menu .dropdown {
+        width: 70%;
+        height: 80%;
+        margin-top: -14vh;
+        margin-bottom: 5vh;
+        border-bottom: 1px solid var(--footer-text);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--heading);
+        font-weight: 600;
+    }
+
+    main header nav .menu .dropdown div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60vh;
+        width: 30vw;
+    }
+
+    main header nav .menu .dropdown :where(.downPro[data-click="yes"] img, .downComp[data-click="yes"] img, .downConn[data-click="yes"] img) {
+        transform: rotate(180deg);
+    }
+
+    main header nav .menu .dropdown :where(.downPro[data-click="yes"] p.p, .downComp[data-click="yes"] p.c, .downConn[data-click="yes"] p.C) {
+        color: var(--footer-text);
+    }
+
+    main header nav .menu .dropdown .downPro .downMob {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 20%;
+        padding: 1em;
+        top: 8vh;
+        width: 40vw;
+        font-size: .8em;
+        background-color: var(--footer-text);
+        border-radius: 10px;
+        font-weight: 300;
+    }
+
+    main header nav .menu .dropdown .downPro .downMob[data-down="down"] {
+        display: flex;
+    }
+
+    main header nav .menu .dropdown .downComp .downMob {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 18%;
+        padding: 1em;
+        top: 30vh;
+        width: 40vw;
+        font-size: .8em;
+        background-color: var(--footer-text);
+        border-radius: 10px;
+        font-weight: 300;
+    }
+
+    main header nav .menu .dropdown .downComp .downMob[data-down="down"] {
+        display: flex;
+    }
+
+    main header nav .menu .dropdown .downConn .downMob {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 10%;
+        padding: 1em;
+        top: 52vh;
+        width: 40vw;
+        font-size: .8em;
+        background-color: var(--footer-text);
+        border-radius: 10px;
+        font-weight: 300;
+    }
+
+    main header nav .menu .dropdown .downConn .downMob[data-down="down"] {
+        display: flex;
+    }
+
+    main header nav .menu .login {
+        display: block;
+        height: 5%;
+    }
+
+    main header nav .menu .login p {
+        color: var(--heading);
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    main header nav .menu .login button {
+        background: linear-gradient(90deg, var(--gradient-mob-first), var(--gradient-mob-second));
+        color: var(--text);
+    }
+
+    /* header utama */
+    main header .utama {
+        width: 80vw;
+        margin: auto;
+    }
+
+    main header .utama .teks {
+        line-height: 2em;
+    }
+
+    main header .utama .teks h1 {
+        font-size: 2em;
+    }
+
+    main header .utama .teks p {
+        font-size: 1em;
+    }
+
+    /* isi feature */
+    main .feature {
+        background-image: none;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        height: auto;
+    }
+
+    main .feature h1 {
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+
+    main .feature img {
+        display: block;
+        margin-top: 5vh;
+    }
+
+    main .feature article {
+        width: 80vw;
+        margin: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    main .feature article h1 {
+        margin-top: 5vh;
+        font-size: 1.7em;
+    }
+
+    main .feature article p:nth-child(4) {
+        font-size: 1em;
+    }
+
+
+    /* state art */
+    main .state {
+        grid-template-columns: 1fr;
+        width: 100vw;
+        height: 70vh;
+        margin-top: 20vh;
+        background-image: url("../images/bg-pattern-circles.svg");
+        background-position: -10vw -20vh;
+        background-size: 120vw 60vh;
+    }
+
+    main .state::after {
+        width: 100vw;
+        height: 70vh;
+        background: linear-gradient(to bottom, var(--background-gradient-first), var(--background-gradient-second));
+    }
+
+    main .state img {
+        margin: auto;
+        width: 90vw;
+        margin-top: -20vh;
+    }
+
+    main .state article {
+        margin: auto;
+        margin-top: -10vh;
+        text-align: center;
+        width: 90vw;
+    }
+
+    main .state article h1 {
+        font-size: 1.8em;
+    }
+
+    main .state article p {
+        font-size: 1.2em;
+    }
+
+    /* tool */
+
+    main .tool {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    main .tool .gambar {
+        width: 100vw;
+    }
+
+    main .tool .gambar img:nth-child(2) {
+        display: block;
+    }
+
+    main .tool .gambar img:nth-child(1) {
+        display: none;
+    }
+
+    main .tool article {
+        width: 90vw;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+
+    main .tool article h1 {
+        font-size: 1.5em;
+    }
+
+    main .tool article p {
+        font-size: 1.03em;
+    }
+
+    /* footer */
+    main footer .center {
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+        text-align: center;
+    }
+
+    main footer .center div {
+        margin-top: 4em;
+    }
+}
